@@ -44,7 +44,6 @@ export default defineComponent({
     const speed = ref(1)
     const id = uuid('ani-')
     const init = () => {
-      debugger
       let cv = document.getElementById(id)
       lottie.loadAnimation({
         container: cv, // the dom element that will contain the animation
@@ -53,7 +52,7 @@ export default defineComponent({
         autoplay: true,
         path: props.path, // the path to the animation json
       })
-      lottie.setDirection(1);
+      // lottie.setDirection(0);
     }
     const toggleSpeed = () => {
       if (speed.value == 1) {

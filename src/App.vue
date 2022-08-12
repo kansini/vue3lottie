@@ -3,7 +3,7 @@
       :width="160"
       :height="160"
       renderer="canvas"
-
+      path="./ani/cloudy.json"
   />
 </template>
 <script lang="ts">
