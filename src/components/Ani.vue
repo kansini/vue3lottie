@@ -5,7 +5,7 @@
       @click="toggleAni"></div>
 </template>
 
-<script lang="ts">
+<script>
 import * as lottie from 'lottie-web'
 import {uuid} from "./uuid"
 import {defineComponent, ref, onMounted} from 'vue'
@@ -44,6 +44,7 @@ export default defineComponent({
     const speed = ref(1)
     const id = uuid('ani-')
     const init = () => {
+      debugger
       let cv = document.getElementById(id)
       lottie.loadAnimation({
         container: cv, // the dom element that will contain the animation
@@ -52,25 +53,29 @@ export default defineComponent({
         autoplay: true,
         path: props.path, // the path to the animation json
       })
+      lottie.setDirection(1);
     }
     const toggleSpeed = () => {
-      if (this.speed == 1) {
+      if (speed.value == 1) {
         lottie.setSpeed(2)
-        this.speed = 2
+        speed.value = 2
       } else {
         lottie.setSpeed(1)
-        this.speed = 1
+        speed.value = 1
       }
     }
     const toggleAni = () => {
-      if (!this.isPlay) {
+      if (!isPlay.value) {
         lottie.play()
-        this.isPlay = true
+        isPlay.value = true
       } else {
         lottie.pause()
-        this.isPlay = false
+        isPlay.value = false
       }
     }
+    onMounted(() => {
+      init()
+    })
     return {
       isPlay,
       speed,
@@ -78,10 +83,6 @@ export default defineComponent({
       toggleSpeed,
       toggleAni
     }
-    onMounted(() => {
-      init()
-      lottie.setDirection(1);
-    })
   }
 })
 </script>
