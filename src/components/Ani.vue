@@ -1,0 +1,87 @@
+<template>
+  <div
+      :id="id"
+      :style="{width:width + 'px',height:height + 'px',background:background}"
+      @click="toggleAni"></div>
+</template>
+
+<script lang="ts">
+import * as lottie from 'lottie-web'
+import {uuid} from "./uuid"
+import {defineComponent, ref, onMounted} from 'vue'
+
+export default defineComponent({
+  props: {
+    path: {
+      type: String,
+      default: "./ani/character.json"
+    },
+    height: {
+      type: Number,
+      default: 200
+    },
+    width: {
+      type: Number,
+      default: 200
+    },
+    renderer: {
+      type: String,
+      default: 'svg'
+    },
+    background: {
+      type: String,
+      default: 'transparent'
+    },
+    AniOption: {
+      type: Object,
+      default: () => {
+        return {}
+      }
+    }
+  },
+  setup(props, ctx) {
+    const isPlay = ref(true)
+    const speed = ref(1)
+    const id = uuid('ani-')
+    const init = () => {
+      let cv = document.getElementById(id)
+      lottie.loadAnimation({
+        container: cv, // the dom element that will contain the animation
+        renderer: props.renderer,
+        loop: true,
+        autoplay: true,
+        path: props.path, // the path to the animation json
+      })
+    }
+    const toggleSpeed = () => {
+      if (this.speed == 1) {
+        lottie.setSpeed(2)
+        this.speed = 2
+      } else {
+        lottie.setSpeed(1)
+        this.speed = 1
+      }
+    }
+    const toggleAni = () => {
+      if (!this.isPlay) {
+        lottie.play()
+        this.isPlay = true
+      } else {
+        lottie.pause()
+        this.isPlay = false
+      }
+    }
+    return {
+      isPlay,
+      speed,
+      id,
+      toggleSpeed,
+      toggleAni
+    }
+    onMounted(() => {
+      init()
+      lottie.setDirection(1);
+    })
+  }
+})
+</script>
