@@ -1,12 +1,13 @@
 <template>
   <div class="ani-list">
-    <vue-lottie
-        v-for="item in aniList"
-        width="12.5vw"
-        height="12.5vw"
-        renderer="svg"
-        :path="`./ani/${item}.json`"
-    />
+    <div class="ani-list-item" v-for="item in aniList">
+      <vue-lottie
+          width="12.5vw"
+          height="12.5vw"
+          :renderer="item.renderer"
+          :path="`./ani/${item.name}.json`"
+      />
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -18,31 +19,114 @@ export default defineComponent({
   components: {VueLottie},
   setup() {
     const aniList = reactive([
-      'cloudy',
-      'alert-setting',
-      'blockchain',
-      'blue-success',
-      'green-success',
-      'red-success',
-      'pink-success',
-      'yellow-success',
-      'bookmark',
-      'character',
-      'check',
-      'data-analysis',
-      'error-404',
-      'fingerScan',
-      'gift',
-      'image-loading',
-      'loading-book',
-      'loading-brochure',
-      'medal',
-      'successfully-added',
-      'swimming-pool',
-      'train',
-      'van',
-      'walkProcesses',
-      'working'
+      {
+        name: 'cloudy',
+        renderer: 'canvas'
+      },
+      {
+        name: 'alert-setting',
+        renderer: 'canvas'
+      },
+      {
+        name: 'blockchain',
+        renderer: 'canvas'
+      },
+      {
+        name: 'blue-success',
+        renderer: 'canvas'
+      },
+      {
+        name: 'green-success',
+        renderer: 'canvas'
+      },
+      {
+        name: 'red-success',
+        renderer: 'canvas'
+      },
+      {
+        name: 'pink-success',
+        renderer: 'canvas'
+      },
+      {
+        name: 'yellow-success',
+        renderer: 'canvas'
+      },
+      {
+        name: 'bookmark',
+        renderer: 'canvas'
+      },
+      {
+        name: 'character',
+        renderer: 'canvas'
+      },
+      {
+        name: 'check',
+        renderer: 'canvas'
+      },
+      {
+        name: 'data-analysis',
+        renderer: 'canvas'
+      },
+      {
+        name: 'error-404',
+        renderer: 'canvas'
+      },
+      {
+        name: 'fingerScan',
+        renderer: 'canvas'
+      },
+      {
+        name: 'gift',
+        renderer: 'canvas'
+      },
+      {
+        name: 'image-loading',
+        renderer: 'canvas'
+      },
+      {
+        name: 'loading-book',
+        renderer: 'canvas'
+      },
+      {
+        name: 'loading-brochure',
+        renderer: 'canvas'
+      },
+      {
+        name: 'medal',
+        renderer: 'canvas'
+      },
+      {
+        name: 'successfully-added',
+        renderer: 'canvas'
+      },
+      {
+        name: 'swimming-pool',
+        renderer: 'canvas'
+      },
+      {
+        name: 'train',
+        renderer: 'canvas'
+      },
+      {
+        name: 'van',
+        renderer: 'svg'
+      },
+      {
+        name: 'walkProcesses',
+        renderer: 'canvas'
+      },
+      {
+        name: 'working',
+        renderer: 'canvas'
+      },
+      {
+        name: 'network-broken',
+        renderer: 'canvas'
+      },
+      {
+        name: 'not-found',
+        renderer: 'canvas'
+      }
     ])
     return {
       aniList
