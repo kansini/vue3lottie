@@ -1,7 +1,7 @@
 <template>
   <div
       :id="id"
-      :style="{width:width + 'px',height:height + 'px',background:background}"
+      :style="{width:width ,height:height,background:background}"
       @click="toggleAni"></div>
 </template>
 
@@ -17,12 +17,12 @@ export default defineComponent({
       default: "./ani/character.json"
     },
     height: {
-      type: Number,
-      default: 200
+      type: String,
+      default: '200px'
     },
     width: {
-      type: Number,
-      default: 200
+      type: String,
+      default: '200px'
     },
     renderer: {
       type: String,
@@ -39,7 +39,7 @@ export default defineComponent({
       }
     }
   },
-  setup(props, ctx) {
+  setup(props) {
     const isPlay = ref(true)
     const speed = ref(1)
     const id = uuid('ani-')
@@ -55,7 +55,7 @@ export default defineComponent({
       // lottie.setDirection(0);
     }
     const toggleSpeed = () => {
-      if (speed.value == 1) {
+      if (speed.value === 1) {
         lottie.setSpeed(2)
         speed.value = 2
       } else {
