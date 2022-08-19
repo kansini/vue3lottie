@@ -1,23 +1,37 @@
 <template>
   <div class="ani-list">
-    <div class="ani-list-item" v-for="item in aniList">
-      <vue-lottie
-          width="12.5vw"
-          height="12.5vw"
-          :renderer="item.renderer"
-          :path="`./ani/${item.name}.json`"
-      />
+    <div class="yoga-list-item" v-for="item in yogaList.data">
+      <img :src="item.img_url" alt="">
+      <div>{{ item.english_name }}</div>
+      <div>{{ item.sanskrit_name }}</div>
     </div>
+    <!--    <div class="ani-list-item" v-for="item in aniList">-->
+    <!--      <vue-lottie-->
+    <!--          width="12.5vw"-->
+    <!--          height="12.5vw"-->
+    <!--          :renderer="item.renderer"-->
+    <!--          :path="`./ani/${item.name}.json`"-->
+    <!--      />-->
+    <!--    </div>-->
   </div>
 </template>
 <script lang="ts">
 import VueLottie from "./components/Ani.vue"
 import {defineComponent, reactive} from 'vue'
+import {getYogaList} from './api/getYogaList'
 
 export default defineComponent({
   name: 'App',
-  components: {VueLottie},
+  components: {
+    VueLottie
+  },
   setup() {
+    interface IYoga {
+      img_url: string
+      english_name: string
+      sanskrit_name: string
+    }
+
     const aniList = reactive([
       {
         name: 'cloudy',
@@ -128,8 +142,11 @@ export default defineComponent({
         renderer: 'canvas'
       }
     ])
+    let yogaList = reactive([])
+    getYogaList().then(res => yogaList.data = res.data)
     return {
-      aniList
+      aniList,
+      yogaList
     }
   }
 })
@@ -143,6 +160,15 @@ export default defineComponent({
 .ani-list {
   display: flex;
   flex-wrap: wrap;
+}
+
+.yoga-list-item {
+  text-align: center;
+  padding: 8px 0;
+
+  img {
+    width: 5vw;
+  }
 }
 </style>
 
