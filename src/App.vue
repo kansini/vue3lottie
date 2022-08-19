@@ -1,7 +1,7 @@
 <template>
   <div class="ani-list">
     <div class="yoga-list-item" v-for="item in yogaList.data">
-      <img :src="item.img_url" alt="">
+      <img :src="item.img_url" >
       <div>{{ item.english_name }}</div>
       <div>{{ item.sanskrit_name }}</div>
     </div>
@@ -142,7 +142,9 @@ export default defineComponent({
         renderer: 'canvas'
       }
     ])
-    let yogaList = reactive([])
+    const yogaList = reactive({
+      data: []
+    })
     getYogaList().then(res => yogaList.data = res.data)
     return {
       aniList,
