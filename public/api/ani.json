@@ -1,0 +1,154 @@
+[
+  {
+    "name": "alert-setting",
+    "renderer": "canvas"
+  },
+  {
+    "name": "blockchain",
+    "renderer": "canvas"
+  },
+  {
+    "name": "blue-success",
+    "renderer": "canvas"
+  },
+  {
+    "name": "green-success",
+    "renderer": "canvas"
+  },
+  {
+    "name": "red-success",
+    "renderer": "canvas"
+  },
+  {
+    "name": "pink-success",
+    "renderer": "canvas"
+  },
+  {
+    "name": "yellow-success",
+    "renderer": "canvas"
+  },
+  {
+    "name": "bookmark",
+    "renderer": "canvas"
+  },
+  {
+    "name": "character",
+    "renderer": "canvas"
+  },
+  {
+    "name": "check",
+    "renderer": "canvas"
+  },
+  {
+    "name": "data-analysis",
+    "renderer": "canvas"
+  },
+  {
+    "name": "error-404",
+    "renderer": "canvas"
+  },
+  {
+    "name": "fingerScan",
+    "renderer": "canvas"
+  },
+  {
+    "name": "gift",
+    "renderer": "canvas"
+  },
+  {
+    "name": "image-loading",
+    "renderer": "canvas"
+  },
+  {
+    "name": "loading-book",
+    "renderer": "canvas"
+  },
+  {
+    "name": "loading-brochure",
+    "renderer": "canvas"
+  },
+  {
+    "name": "medal",
+    "renderer": "canvas"
+  },
+  {
+    "name": "successfully-added",
+    "renderer": "canvas"
+  },
+  {
+    "name": "swimming-pool",
+    "renderer": "canvas"
+  },
+  {
+    "name": "train",
+    "renderer": "canvas"
+  },
+  {
+    "name": "van",
+    "renderer": "svg"
+  },
+  {
+    "name": "walkProcesses",
+    "renderer": "canvas"
+  },
+  {
+    "name": "working",
+    "renderer": "canvas"
+  },
+  {
+    "name": "network-broken",
+    "renderer": "canvas"
+  },
+  {
+    "name": "not-found",
+    "renderer": "canvas"
+  },
+  {
+    "name": "charts",
+    "renderer": "canvas"
+  },
+  {
+    "name": "map",
+    "renderer": "canvas"
+  },
+  {
+    "name": "fac",
+    "renderer": "canvas"
+  },
+  {
+    "name": "job",
+    "renderer": "canvas"
+  },
+  {
+    "name": "cargo",
+    "renderer": "canvas"
+  },
+  {
+    "name": "location",
+    "renderer": "canvas"
+  },
+  {
+    "name": "bg",
+    "renderer": "canvas"
+  },
+  {
+    "name": "reply",
+    "renderer": "canvas"
+  },
+  {
+    "name": "404error",
+    "renderer": "canvas"
+  },
+  {
+    "name": "data",
+    "renderer": "canvas"
+  },
+  {
+    "name": "arrangement",
+    "renderer": "canvas"
+  },
+  {
+    "name": "sending",
+    "renderer": "canvas"
+  }
+]
